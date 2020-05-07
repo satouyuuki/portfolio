@@ -1,0 +1,27 @@
+$backgroundColors: (
+  white: $black,
+  black: $white
+);
+
+@mixin btn($backgroundColor: white) {
+  border: 1px solid #{map-get($backgroundColors, $backgroundColor)};
+  color: #{map-get($backgroundColors, $backgroundColor)};
+  display: inline-block;
+  padding: 16px 36px;
+}
+
+.black-btn {
+    @include btn();
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        background: url('../assets/images/scrollbar.svg') no-repeat;
+        transform: rotate(-90deg);
+        width: 10px;
+        height: 70px;
+        bottom: -10px;
+        right: -20px;
+    }
+}

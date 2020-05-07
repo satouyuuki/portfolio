@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <p class="logo__text">
+        MEI NAKAMURA PORTFOLIO
+      </p>
+    </div>
+    <div class="menu-icon" onclick="changeIcon(this)">
+      <span class="menu-icon__bar"></span>
+      <span class="menu-icon__bar"></span>
+      <span class="menu-icon__bar"></span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="flex-layout">
+      <div class="sidemenu flex-layout__side">
+        <a class="sidemenu__link" href="#">WORKS</a>
+        <a class="sidemenu__link" href="#">
+          WEB DESIGN<br>
+          LOGO / ILLUSTRATION<br>
+          VISUAL DESIGN
+        </a>
+        <a class="sidemenu__link" href="#">ABOUT</a>
+      </div>
+      <div class="main-visual flex-layout__main">
+        <img class="main-visual__img" src="./assets/images/sky.jpg" alt="メインのパイの実画像">
+        <div class="info">
+          <p class="info__title">中村 めい</p>
+          <span class="info__sub">MEI NAKAMURA</span>
+          <div class="dotted-line"></div>
+          <p class="info__text">
+            ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。<br>
+            ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。ダミーテキストを入力します。
+          </p>
+        </div>
+        <div class="main-visual__btn">
+          <div class="black-btn">BACK TO TOP</div>
+        </div>
+        <div class="textbar">
+          <span class="textbar__bar"></span>
+          <span class="textbar__text">ABOUT</span>
+        </div>
+      </div>
+      <div class="scroll-now flex-layout__side">
+        <span class="scroll-now__item">01</span>
+        <span class="scroll-now__item--current">02</span>
+        <span class="scroll-now__divider"></span>
+        <span class="scroll-now__item--current">15</span>
+        <span class="scroll-now__item">03</span>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="./js/main.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@ $breakpoints: (
   }
 }
 
-@mixin baseStyle($color: $black, $fontSize: '14px', $fontWeight: '500', $lineHeight: 1.5 ) {
+@mixin baseStyle($color: $black, $fontSize: 14px, $fontWeight: 500, $lineHeight: 1.5 ) {
   font-size: $fontSize;
   font-weight: $fontWeight;
   color: $color;
