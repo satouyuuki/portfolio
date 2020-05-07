@@ -1,0 +1,23 @@
+.pdb-12 {
+  padding-bottom: 12px;
+}
+.pdb-22 {
+  padding-bottom: 22px;
+}
+.pdb-25 {
+  padding-bottom: 25px;
+}
+.pdb-30 {
+  padding-bottom: 30px;
+}
+.pdb-35 {
+  padding-bottom: 35px;
+}
+.pdb-40 {
+  padding-bottom: 40px;
+}
+@include mq() {
+  .pdb-pc-45 {
+    padding-bottom: 45px;
+  }
+}

@@ -1,0 +1,35 @@
+.pdt-23 {
+  padding-top: 23px;
+}
+.pdt-25 {
+  padding-top: 25px;
+}
+.pdt-27 {
+  padding-top: 27px;
+}
+.pdt-35 {
+  padding-top: 35px;
+}
+.pdt-45 {
+  padding-top: 45px;
+}
+.pdt-60 {
+  padding-top: 60px;
+}
+@include mq() {
+  .pdt-pc-0 {
+    padding-top: 0;
+  }
+  .pdt-45 {
+    padding-top: 100px;
+  }
+  .pdt-60 {
+    padding-top: 160px;
+  }
+  .pdt-pc-12 {
+    padding-top: 12px;
+  }
+  .pdt-pc-80 {
+    padding-top: 80px;
+  }
+}
