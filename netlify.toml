@@ -1,2 +1,4 @@
 [context.production]
   command = 'npm start && echo -e "/*\n  Basic-Auth: $BASIC_AUTH_ID:$BASIC_AUTH_PASS" > dist/_headers'
+  [context.branch-deploy]
+  command = 'npm start && echo -e "/*\n  Basic-Auth: $BASIC_AUTH_ID:$BASIC_AUTH_PASS" > dist/_headers'
