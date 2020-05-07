@@ -1,0 +1,9 @@
+.sidemenu {
+    display: block;
+    padding-left: 80px;
+    &__link {
+        display: inline-block;
+        color: black;
+        margin-bottom: 50px;
+    }
+}

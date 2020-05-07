@@ -1,0 +1,12 @@
+.flex-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  &__side {
+    flex: 0 1 250px;
+  }
+  &__main {
+    flex: 0 1 auto;
+  }
+}

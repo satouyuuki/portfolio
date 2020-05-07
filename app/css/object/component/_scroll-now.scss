@@ -1,0 +1,41 @@
+.scroll-now {
+    display: block;
+
+    %__item {
+        display: block;
+        text-align: right;
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 70px;
+            height: 1px;
+            vertical-align: middle;
+        }
+    }
+
+    &__item {
+        @extend %__item;
+        &:first-child {
+            margin-bottom: 10px;
+        }
+        &:last-child {
+            margin-top: 10px;
+        }
+        &::after {
+            background-color: $black;
+        }
+        &--current {
+            @extend %__item;
+            &::after {
+                background-color: white;
+            }
+        }
+    }
+    &__divider {
+        display: block;
+        margin-left: auto;
+        width: 95px;
+        height: 1px;
+        background-color: $black;
+    }
+}

@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    padding: 0 80px;
+    height: 160px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-icon {
+        &__bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: black;
+            margin: 5px 0;
+        }
+        // &.change {
+        //     &__bar {
+        //         &:nth-child(1) {
+        //             transform: rotate(-45deg) translate(-9px, 6px);
+        //         }
+        //         &:nth-child(2) {
+        //             opacity: 0;
+        //         }
+        //         &:nth-child(3) {
+        //             transform: rotate(45deg) translate(-8px, -8px);
+        //         }
+        //     }
+        // }
+    }
+}
+

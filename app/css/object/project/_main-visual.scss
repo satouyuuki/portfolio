@@ -1,0 +1,18 @@
+.main-visual {
+    position: relative;
+    &__img {
+        margin-bottom: 20px;
+    }
+    &__link {
+        display: block;
+        text-align: right;
+    }
+    .visual-link {
+        &__text {
+            color: $black;
+            &--grey {
+                color: $grey;
+            }
+        }
+    }
+}
