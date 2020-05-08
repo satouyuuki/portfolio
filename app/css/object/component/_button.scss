@@ -4,24 +4,73 @@ $backgroundColors: (
 );
 
 @mixin btn($backgroundColor: white) {
+  background: #{map-get($backgroundColors, $backgroundColor)};
+}
+@mixin stroked-btn($backgroundColor: white, $fontSize: 12px) {
   border: 1px solid #{map-get($backgroundColors, $backgroundColor)};
   color: #{map-get($backgroundColors, $backgroundColor)};
+  font-size: $fontSize;
   display: inline-block;
   padding: 16px 36px;
 }
-
 .black-btn {
-    @include btn();
-    position: relative;
+  @include btn();
+  @include baseStyle($color: $white, $fontSize: 12px);
+  display: inline-block;
+  width: 280px;
+  padding: 14px 0;
+  text-align: center;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background: url('../assets/images/icon_link.svg') no-repeat;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.black-stroked-btn {
+  @include stroked-btn();
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background: url('../assets/images/scrollbar.svg') no-repeat;
+    transform: rotate(-90deg);
+    width: 10px;
+    height: 70px;
+    bottom: -10px;
+    right: -20px;
+  }
+}
+.white-stroked-btn {
+  @include stroked-btn($backgroundColor: black);
+  position: relative;
+  &.right {
     &::after {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        background: url('../assets/images/scrollbar.svg') no-repeat;
-        transform: rotate(-90deg);
-        width: 10px;
-        height: 70px;
-        bottom: -10px;
-        right: -20px;
+      content: '';
+      position: absolute;
+      display: inline-block;
+      background: url('../assets/images/white-right-arrow.gif') no-repeat;
+      width: 52px;
+      height: 5px;
+      bottom: 22px;
+      right: -40px;
     }
+  }
+  &.left {
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      background: url('../assets/images/white-left-arrow.gif') no-repeat;
+      width: 52px;
+      height: 5px;
+      bottom: 22px;
+      left: -40px;
+    }
+  }
 }

@@ -33,3 +33,23 @@
         margin-left: 5px;
     }
 }
+
+.pagetopbar {
+    position: absolute;
+    right: -50px;
+    top: -150px;
+
+    &__text {
+        @include baseStyle($fontSize: 12px);
+        writing-mode: vertical-rl;
+        display: block;
+        &::before {
+            content: '';
+            display: inline-block;
+            background: url('../assets/images/black-arrow.gif') no-repeat;
+            width: 5px;
+            height: 52px;
+            margin-bottom: 10px;
+        }
+    }
+}

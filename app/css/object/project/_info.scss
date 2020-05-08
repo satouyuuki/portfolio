@@ -1,16 +1,28 @@
 .info {
     display: block;
-    max-width: 530px;
-    width: 100%;
+    // max-width: 530px;
+    // width: 100%;
     margin-left: auto;
     &__title {
         @include baseStyle($fontSize: 16px);
     }
+    &__title02 {
+        @include baseStyle($fontSize: 18px);
+    }
     &__sub {
         @include baseStyle($color: $grey, $fontSize: 10px);
+    }
+    &__sub02 {
+        @include baseStyle($color: $grey02, $fontSize: 12px);
     }
     &__text {
         @include baseStyle($color: $black, $fontSize: 10px);
         margin-bottom: 95px;
+    }
+    &__desc {
+        @include baseStyle($color: $black, $fontSize: 14px);
+        &--grey {
+            @include baseStyle($color: $grey02, $fontSize: 14px);
+        }
     }
 }
