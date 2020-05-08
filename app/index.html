@@ -8,52 +8,75 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="mask">
+    <div class="accordion-list">
+      <a class="accordion-list__link" href="#">
+        <span class="accordion-list__text">01</span>
+        <span class="accordion-list__text--primary">WORKS</span>
+        <span class="accordion-list__text">SOME CASE</span>
+      </a>
+      <a class="accordion-list__link" href="#">
+        <span class="accordion-list__text">02</span>
+        <span class="accordion-list__text--primary">ABOUT</span>
+        <span class="accordion-list__text">MY PHILOSOPHY</span>
+      </a>
+      <a class="accordion-list__link" href="#">
+        <span class="accordion-list__text">00</span>
+        <span class="accordion-list__text">m.design1100@gmail.com</span>
+        <span class="accordion-list__text">SAY HELLO !</span>
+      </a>
+    </div>
+  </div>
+
   <header class="header">
     <div class="logo">
       <p class="logo__text">
         MEI NAKAMURA PORTFOLIO
       </p>
     </div>
-    <div class="menu-icon" onclick="changeIcon(this)">
+    <div class="menu-icon">
       <span class="menu-icon__bar"></span>
       <span class="menu-icon__bar"></span>
       <span class="menu-icon__bar"></span>
     </div>
   </header>
   <main class="main">
-    <div class="flex-layout">
-      <div class="sidemenu flex-layout__side">
-        <a class="sidemenu__link" href="#">WORKS</a>
-        <a class="sidemenu__link" href="#">
-          WEB DESIGN<br>
-          LOGO / ILLUSTRATION<br>
-          VISUAL DESIGN
-        </a>
-        <a class="sidemenu__link" href="#">ABOUT</a>
-      </div>
-      <div class="main-visual flex-layout__main">
-        <img class="main-visual__img" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
-        <div class="main-visual__link" href="#">
-          <a class="visual-link">
-            <span class="visual-link__text--grey">WEB</span>
-            <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
+    <div class="container-fluid">
+      <div class="flex-layout">
+        <div class="sidemenu flex-layout__side">
+          <a class="sidemenu__link" href="#">WORKS</a>
+          <a class="sidemenu__link" href="#">
+            WEB DESIGN<br>
+            LOGO / ILLUSTRATION<br>
+            VISUAL DESIGN
           </a>
+          <a class="sidemenu__link" href="#">ABOUT</a>
         </div>
-        <div class="scrollbar">
-          <span class="scrollbar__text">SCROLL</span>
-          <img class="scrollbar__img" src="./assets/images/scrollbar.svg" alt="スクロールバー">
+        <div class="main-visual flex-layout__main">
+          <img class="main-visual__img" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
+          <div class="main-visual__link" href="#">
+            <a class="visual-link">
+              <span class="visual-link__text--grey">WEB</span>
+              <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
+            </a>
+          </div>
+          <div class="scrollbar">
+            <span class="scrollbar__text">SCROLL</span>
+            <img class="scrollbar__img" src="./assets/images/scrollbar.svg" alt="スクロールバー">
+          </div>
         </div>
-      </div>
-      <div class="scroll-now flex-layout__side">
-        <span class="scroll-now__item">01</span>
-        <span class="scroll-now__item--current">02</span>
-        <span class="scroll-now__divider"></span>
-        <span class="scroll-now__item--current">15</span>
-        <span class="scroll-now__item">03</span>
+        <div class="scroll-now flex-layout__side">
+          <span class="scroll-now__item">01</span>
+          <span class="scroll-now__item--current">02</span>
+          <span class="scroll-now__divider"></span>
+          <span class="scroll-now__item--current">15</span>
+          <span class="scroll-now__item">03</span>
+        </div>
       </div>
     </div>
   </main>
   <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

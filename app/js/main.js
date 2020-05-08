@@ -1,3 +1,4 @@
-function changeIcon(x) {
-    x.classList.toggle('change');
-}
+$('.menu-icon').on('click', () => {
+    $('.menu-icon').find('.menu-icon__bar').toggleClass('active');
+    $('.mask').slideToggle();
+});
