@@ -5,6 +5,10 @@
   &__side {
     width: 280px;
   }
+  &__side02 {
+    max-width: 270px;
+    flex: 1;
+  }
   &__main {
     max-width: 710px;
     flex: 1;

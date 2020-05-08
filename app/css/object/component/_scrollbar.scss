@@ -4,13 +4,14 @@
     bottom: 50px;
 
     &__text {
+        @include baseStyle($fontSize: 12px);
         writing-mode: vertical-rl;
         display: block;
         margin-bottom: 10px;
     }
     &__img {
-        width: 10px;
-        height: 70px;
+        width: 5px;
+        height: 52px;
         display: inline-block;
         margin-left: 5px;
     }

@@ -1,7 +1,7 @@
 .main-visual {
     position: relative;
     &__img {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     &__link {
         display: block;
@@ -9,9 +9,9 @@
     }
     .visual-link {
         &__text {
-            color: $black;
+            @include baseStyle($color: $black, $fontSize: 10px);
             &--grey {
-                color: $grey;
+                @include baseStyle($color: $grey02, $fontSize: 10px);
             }
         }
     }
@@ -22,8 +22,8 @@
         &__btn {
             text-align: center;
         }
-        &__img {
-            margin-bottom: 40px;
-        }
+        // &__img {
+        //     margin-bottom: 40px;
+        // }
     }
 }

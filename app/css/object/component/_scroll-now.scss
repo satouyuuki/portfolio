@@ -15,6 +15,7 @@
 
     &__item {
         @extend %__item;
+        @include baseStyle($color: $grey02, $fontSize: 12px);
         &:first-child {
             margin-bottom: 10px;
         }
@@ -22,10 +23,11 @@
             margin-top: 10px;
         }
         &::after {
-            background-color: $black;
+            background-color: $grey02;
         }
         &--current {
             @extend %__item;
+            @include baseStyle($fontSize: 12px);
             &::after {
                 background-color: white;
             }
@@ -33,7 +35,7 @@
     }
     &__divider {
         display: block;
-        margin-left: auto;
+        margin: 5px 0 5px auto;
         width: 95px;
         height: 1px;
         background-color: $black;
