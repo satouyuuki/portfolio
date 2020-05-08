@@ -21,7 +21,26 @@
             @include baseStyle($color: $grey02, $fontSize: 14px);
         }
     }
+    &__btn {
+        &.pc {
+            display: block;
+        }
+        &.sp {
+            display: none;
+        }
+    }
     @include mq() {
-        padding-right: 40px;
+        &__text {
+            margin-bottom: 30px;
+        }
+        &__btn {
+            &.pc {
+                display: none;
+            }
+            &.sp {
+                display: block;
+                margin-bottom: 65px;
+            }
+        }
     }
 }

@@ -16,4 +16,7 @@
     display: inline-block;
     margin: 0 30px;
     background: white;
+    @include mq() {
+        display: none;
+    }
 }

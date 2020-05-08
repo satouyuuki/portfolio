@@ -20,7 +20,13 @@
   flex-wrap: wrap;
   // justify-content: space-between;
   &__item {
-    width: calc((100% - 40px) / 2);
+    width: calc(100% / 2);
+    &:nth-child(odd) {
+      padding-right: 20px;
+    }
+    &:nth-child(even) {
+      padding-left: 20px;
+    }
   }
   &__all {
     width: calc(100% / 1);
@@ -39,6 +45,15 @@
     &__info {
       display: block;
       width: calc(100% - 100px);
+    }
+    &__item {
+      width: 100%;
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+      &:nth-child(even) {
+        padding-left: 0;
+      }
     }
   }
 }

@@ -11,7 +11,8 @@ $backgroundColors: (
   color: #{map-get($backgroundColors, $backgroundColor)};
   font-size: $fontSize;
   display: inline-block;
-  padding: 16px 36px;
+  padding: 16px 0;
+  text-align: center;
 }
 .black-btn {
   @include btn();
@@ -25,9 +26,13 @@ $backgroundColors: (
     content: '';
     position: absolute;
     display: inline-block;
-    background: url('../assets/images/icon_link.svg') no-repeat;
-    width: 30px;
-    height: 30px;
+    background: url('../assets/images/icon_link.gif') no-repeat;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+  }
+  @include mq() {
+    width: 100%;
   }
 }
 
@@ -53,6 +58,7 @@ $backgroundColors: (
 .white-stroked-btn {
   @include stroked-btn($backgroundColor: black);
   position: relative;
+  width: 222px;
   &.right {
     &::after {
       content: '';
@@ -75,6 +81,12 @@ $backgroundColors: (
       height: 5px;
       bottom: 22px;
       left: -40px;
+    }
+  }
+  @include mq() {
+    width: 200px;
+    &.left {
+      margin-bottom: 25px;
     }
   }
 }

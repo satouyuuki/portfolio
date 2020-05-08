@@ -1,8 +1,11 @@
 .container {
     display: block;
     max-width: 970px;
-    width: 90%;
+    padding: 0 35px;
     margin: 0 auto 115px;
+    // @include mq() {
+    //     padding: 0 35px;
+    // }
 }
 .container-fluid {
     display: block;
