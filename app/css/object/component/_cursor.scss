@@ -1,0 +1,18 @@
+.cursor {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    cursor: none;
+    //他の要素がクリックできなくならないように
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $black;
+    //どの要素よりも一番上になるようにする
+    z-index: 1000;
+    &.is-active {
+        background: $grey02-hover;
+        border: 1px solid $grey02-hover;
+    }
+}

@@ -1,3 +1,14 @@
+.main-fix {
+    display: block;
+    max-width: 730px;
+    margin: 0 auto;
+    height: 480px;
+    transition: .4s;
+    // overflow-y: hidden;
+    @include mq() {
+        padding: 0 35px;
+    }
+}
 .main {
-    // margin-top: 160px;
+    overflow: hidden;
 }

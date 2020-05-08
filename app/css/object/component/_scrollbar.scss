@@ -1,7 +1,7 @@
 .scrollbar {
-    position: absolute;
-    right: -50px;
-    bottom: 50px;
+    position: fixed;
+    right: 17%;
+    bottom: 35%;
 
     &__text {
         @include baseStyle($fontSize: 12px);
@@ -14,6 +14,10 @@
         height: 52px;
         display: inline-block;
         margin-left: 5px;
+    }
+    @include mq() {
+        right: 5px;
+        bottom: 10%;
     }
 }
 .textbar {

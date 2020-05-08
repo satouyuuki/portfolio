@@ -40,4 +40,14 @@
         height: 1px;
         background-color: $black;
     }
+    @include mq() {
+        %__item {
+            &::after {
+                width: 10px;
+            }
+        }
+        &__divider {
+            width: 25px;
+        }
+    }
 }

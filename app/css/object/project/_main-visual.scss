@@ -1,11 +1,26 @@
 .main-visual {
     position: relative;
     &__img {
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
+        &.pc {
+            display: block;
+        }
+        &.sp {
+            display: none;
+        }
     }
     &__link {
         display: block;
         text-align: right;
+    }
+    .dummy-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        width: 100%;
+        height: 490px;
+        background: $grey02;
     }
     .visual-link {
         &__text {
@@ -22,8 +37,13 @@
         &__btn {
             text-align: center;
         }
-        // &__img {
-        //     margin-bottom: 40px;
-        // }
+        &__img {
+            &.pc {
+                display: none;
+            }
+            &.sp {
+                display: block;
+            }
+        }
     }
 }

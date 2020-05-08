@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="cursor"></div>
   <div class="mask">
     <div class="accordion-list">
       <a class="accordion-list__link" href="#">
@@ -41,37 +42,65 @@
     </div>
   </header>
   <main class="main">
-      <div class="flex-layout">
-        <div class="sidemenu flex-layout__side">
-          <a class="sidemenu__link" href="#">WORKS</a>
-          <a class="sidemenu__link" href="#">
-            <span class="sidemenu__text-min">WEB DESIGN</span><br>
-            <span class="sidemenu__text-min">LOGO / ILLUSTRATION</span><br>
-            <span class="sidemenu__text-min">VISUAL DESIGN</span>
+    <div class="sidemenu sidemenu--fix">
+      <a class="sidemenu__link" href="#">WORKS</a>
+      <a class="sidemenu__link" href="#">
+        <span class="sidemenu__text-min">WEB DESIGN</span><br>
+        <span class="sidemenu__text-min">LOGO / ILLUSTRATION</span><br>
+        <span class="sidemenu__text-min">VISUAL DESIGN</span>
+      </a>
+      <a class="sidemenu__link--active" href="#">ABOUT</a>
+    </div>
+    <div class="main-fix">
+      <div class="main-visual">
+        <img class="main-visual__img pc" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
+        <img class="main-visual__img sp" src="./assets/images/sp_pie.jpg" alt="メインのパイの実画像">
+        <div class="main-visual__link" href="#">
+          <a class="visual-link">
+            <span class="visual-link__text--grey">WEB</span>
+            <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
           </a>
-          <a class="sidemenu__link--active" href="#">ABOUT</a>
-        </div>
-        <div class="main-visual flex-layout__main">
-          <img class="main-visual__img" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
-          <div class="main-visual__link" href="#">
-            <a class="visual-link">
-              <span class="visual-link__text--grey">WEB</span>
-              <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
-            </a>
-          </div>
-          <div class="scrollbar">
-            <span class="scrollbar__text">SCROLL</span>
-            <img class="scrollbar__img" src="./assets/images/scrollbar.gif" alt="スクロールバー">
-          </div>
-        </div>
-        <div class="scroll-now flex-layout__side02">
-          <span class="scroll-now__item">01</span>
-          <span class="scroll-now__item--current">02</span>
-          <span class="scroll-now__divider"></span>
-          <span class="scroll-now__item--current">15</span>
-          <span class="scroll-now__item">03</span>
         </div>
       </div>
+      <div class="main-visual">
+        <div class="main-visual__img dummy-img">1</div>
+        <div class="main-visual__link" href="#">
+          <a class="visual-link">
+            <span class="visual-link__text--grey">WEB</span>
+            <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
+          </a>
+        </div>
+      </div>
+      <div class="main-visual">
+        <div class="main-visual__img dummy-img">2</div>
+        <div class="main-visual__link" href="#">
+          <a class="visual-link">
+            <span class="visual-link__text--grey">WEB</span>
+            <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
+          </a>
+        </div>
+      </div>
+      <div class="main-visual">
+        <div class="main-visual__img dummy-img">3</div>
+        <div class="main-visual__link" href="#">
+          <a class="visual-link">
+            <span class="visual-link__text--grey">WEB</span>
+            <span class="visual-link__text">LOTTE パイの実 BRAND SITE</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scrollbar">
+      <span class="scrollbar__text">SCROLL</span>
+      <img class="scrollbar__img" src="./assets/images/scrollbar.gif" alt="スクロールバー">
+    </div>
+    <div class="scroll-now sidemenu-fix-right">
+      <span class="scroll-now__item" id="prevNum"></span>
+      <span class="scroll-now__item--current" id="currentNum"></span>
+      <span class="scroll-now__divider"></span>
+      <span class="scroll-now__item--current" id="totalNum"></span>
+      <span class="scroll-now__item" id="nextNum"></span>
+    </div>
   </main>
   <footer></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

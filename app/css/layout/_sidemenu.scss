@@ -1,14 +1,17 @@
 .sidemenu {
     display: block;
     padding-left: 80px;
+    background: $white;
+    &--fix {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     %__link {
         display: block;
         margin-bottom: 38px;
     }
     &__link {
-        // @include baseStyle($color: $grey02, $fontSize: 12px);
-        // display: inline-block;
-        // margin-bottom: 38px;
         @extend %__link;
         @include baseStyle($color: $grey02, $fontSize: 12px);
         &--active {
@@ -17,10 +20,26 @@
         }
     }
     &__text-min {
-        // @include baseStyle($color: $grey02, $fontSize: 10px);
         font-size: 10px;
     }
     @include mq() {
         padding-left: 35px;
+        &--fix {
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            transform: translateY(0%);
+            z-index: 1;
+        }
+        %__link {
+            margin-bottom: 10px;
+        }
+
     }
+}
+.sidemenu-fix-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
 }

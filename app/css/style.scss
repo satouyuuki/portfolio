@@ -3,8 +3,8 @@
 
 @import "fundation/_variable";
 @import "fundation/_reset";
-@import "fundation/_base";
 @import "fundation/_mixin";
+@import "fundation/_base";
 
 @import "layout/_header";
 @import "layout/_footer";
@@ -16,6 +16,7 @@
 @import "object/component/_scroll-now";
 @import "object/component/_scrollbar";
 @import "object/component/_mask";
+@import "object/component/_cursor";
 
 @import "object/project/_section";
 @import "object/project/_flex";
