@@ -1,8 +1,4 @@
 .info {
-    display: block;
-    // max-width: 530px;
-    // width: 100%;
-    margin-left: auto;
     &__title {
         @include baseStyle($fontSize: 16px);
     }
@@ -24,5 +20,8 @@
         &--grey {
             @include baseStyle($color: $grey02, $fontSize: 14px);
         }
+    }
+    @include mq() {
+        padding-right: 40px;
     }
 }

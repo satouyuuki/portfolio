@@ -9,7 +9,7 @@
 
 .accordion-list {
     max-width: 570px;
-    width: 90%;
+    width: 80%;
     display: block;
     margin-left: auto;
     margin-right: 140px;
@@ -37,6 +37,29 @@
             @include baseStyle($fontSize: 48px);
             display: inline-block;
             vertical-align: middle;
+        }
+    }
+    @include mq() {
+        margin-right: auto;
+        &__link {
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            span {
+                &:nth-child(3n + 2) {
+                    padding: 0;
+                    order: 1;
+                    width: 100%;
+                    color: $black;
+                }
+            }
+
+        }
+        &__text {
+            color: $hover-text;
+            &--primary {
+                font-size: 34px;
+            }
         }
     }
 }

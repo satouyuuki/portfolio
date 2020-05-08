@@ -16,21 +16,29 @@
     }
 }
 .textbar {
-    position: absolute;
-    left: 50px;
-    bottom: 50px;
-
     &__text {
+        @include baseStyle();
         writing-mode: vertical-rl;
         display: block;
         margin-bottom: 10px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background: $black;
+            top: -80px;
+            left: 5px;
+        }
     }
-    &__bar {
-        width: 2px;
-        height: 70px;
-        background: $black;
-        display: inline-block;
-        margin-left: 5px;
+    @include mq() {
+        @include baseStyle($fontSize: 12px);
+        &__text {
+            &::before {
+                height: 30px;
+            }
+        }
     }
 }
 

@@ -45,4 +45,10 @@
         }
     }
 }
+@include mq() {
+    .header {
+        padding: 0 35px;
+        height: 80px;
+    }
+}
 

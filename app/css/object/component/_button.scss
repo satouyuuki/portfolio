@@ -34,6 +34,7 @@ $backgroundColors: (
 .black-stroked-btn {
   @include stroked-btn();
   position: relative;
+  width: 173px;
   &::after {
     content: '';
     position: absolute;
@@ -44,6 +45,9 @@ $backgroundColors: (
     height: 70px;
     bottom: -10px;
     right: -20px;
+  }
+  @include mq() {
+    width: 200px;
   }
 }
 .white-stroked-btn {

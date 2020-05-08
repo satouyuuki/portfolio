@@ -1,9 +1,26 @@
 .sidemenu {
     display: block;
     padding-left: 80px;
+    %__link {
+        display: block;
+        margin-bottom: 38px;
+    }
     &__link {
-        display: inline-block;
-        color: black;
-        margin-bottom: 50px;
+        // @include baseStyle($color: $grey02, $fontSize: 12px);
+        // display: inline-block;
+        // margin-bottom: 38px;
+        @extend %__link;
+        @include baseStyle($color: $grey02, $fontSize: 12px);
+        &--active {
+            @extend %__link;
+            @include baseStyle($color: $black, $fontSize: 12px);
+        }
+    }
+    &__text-min {
+        // @include baseStyle($color: $grey02, $fontSize: 10px);
+        font-size: 10px;
+    }
+    @include mq() {
+        padding-left: 35px;
     }
 }

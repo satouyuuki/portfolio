@@ -1,7 +1,7 @@
 .main-visual {
     position: relative;
     &__img {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
     &__link {
         display: block;
@@ -17,5 +17,13 @@
     }
     &__btn {
         text-align: right;
+    }
+    @include mq() {
+        &__btn {
+            text-align: center;
+        }
+        &__img {
+            margin-bottom: 40px;
+        }
     }
 }
