@@ -1,0 +1,27 @@
+%fadein {
+    opacity: 0;
+    transform : translate(0, 50px);
+}
+.fadein {
+    // opacity: 0;
+    // transform : translate(0, 50px);
+    @extend %fadein;
+    transition: 1.5s;
+
+    &.s3 {
+        @extend %fadein;
+        transition: 3s;
+    }
+    &.s45 {
+        @extend %fadein;
+        transition: 4.5s;
+    }
+    &.s6 {
+        @extend %fadein;
+        transition: 6s;
+    }
+    &.scrollin {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

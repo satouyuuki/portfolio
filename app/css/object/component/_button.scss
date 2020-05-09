@@ -5,6 +5,10 @@ $backgroundColors: (
 
 @mixin btn($backgroundColor: white) {
   background: #{map-get($backgroundColors, $backgroundColor)};
+  transition: .4s;
+  &:hover {
+    letter-spacing: .5em;
+  }
 }
 @mixin stroked-btn($backgroundColor: white, $fontSize: 12px) {
   border: 1px solid #{map-get($backgroundColors, $backgroundColor)};
@@ -13,10 +17,15 @@ $backgroundColors: (
   display: inline-block;
   padding: 16px 0;
   text-align: center;
+  transition: .4s;
+  &:hover {
+    letter-spacing: .5em;
+  }
 }
 .black-btn {
   @include btn();
-  @include baseStyle($color: $white, $fontSize: 12px);
+  @include baseStyle($color: $white, $fontSize: 12px, $lineHeight: 1);
+  letter-spacing: .2em;
   display: inline-block;
   width: 280px;
   padding: 14px 0;
@@ -26,7 +35,7 @@ $backgroundColors: (
     content: '';
     position: absolute;
     display: inline-block;
-    background: url('../assets/images/icon_link.gif') no-repeat;
+    background: url('../assets/images/icon_link.png') no-repeat;
     width: 20px;
     height: 20px;
     right: 10px;

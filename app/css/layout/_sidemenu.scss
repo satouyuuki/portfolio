@@ -41,5 +41,10 @@
     position: fixed;
     top: 50%;
     right: 0;
+    height: 100px;
+    width: 100px;
     transform: translateY(-50%);
+    @include mq() {
+        width: 26px;
+    }
 }

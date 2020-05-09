@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="cursor"></div>
   <div class="mask">
     <div class="accordion-list">
       <a class="accordion-list__link" href="#">
@@ -52,7 +53,9 @@
         <a class="sidemenu__link--active" href="#">ABOUT</a>
       </div>
       <div class="main-visual flex-layout__main">
-        <img class="main-visual__img" src="./assets/images/sky.jpg" alt="空画像">
+        <div class="main-visual__section">
+          <img class="main-visual__img" src="./assets/images/sky.jpg" alt="空画像">
+        </div>
         <div class="flex-wrap">
           <div class="flex-wrap__textbar textbar">
             <!-- <span class="textbar__bar"></span> -->
@@ -69,7 +72,7 @@
           </div>
         </div>
         <div class="main-visual__btn">
-          <div class="black-stroked-btn">BACK TO TOP</div>
+          <a class="black-stroked-btn" href="/">BACK TO TOP</a>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
     %__item {
         display: block;
         text-align: right;
+        position: absolute;
         &::after {
             content: '';
             display: inline-block;
@@ -33,9 +34,23 @@
             }
         }
     }
+    #currentNum {
+        top: 30%
+    }
+    #nextNum {
+        top: 0
+    }
+    #prevNum {
+        bottom: 0
+    }
+    #totalNum {
+        bottom: 30%
+    }
     &__divider {
         display: block;
-        margin: 5px 0 5px auto;
+        // margin: 5px 0 5px auto;
+        position: absolute;
+        top: 50%;
         width: 95px;
         height: 1px;
         background-color: $black;

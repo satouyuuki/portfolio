@@ -4,15 +4,19 @@
     }
     &__title02 {
         @include baseStyle($fontSize: 18px);
+        display: block;
+        margin-bottom: 50px;
     }
     &__sub {
         @include baseStyle($color: $grey, $fontSize: 10px);
     }
     &__sub02 {
         @include baseStyle($color: $grey02, $fontSize: 12px);
+        display: inline-block;
+        margin-bottom: 5px;
     }
     &__text {
-        @include baseStyle($color: $black, $fontSize: 10px);
+        @include baseStyle($color: $black, $fontSize: 10px, $lineHeight: 2);
         margin-bottom: 95px;
     }
     &__desc {

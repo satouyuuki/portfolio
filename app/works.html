@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="cursor"></div>
   <div class="mask">
     <div class="accordion-list">
       <a class="accordion-list__link" href="#">
@@ -27,6 +28,12 @@
       </a>
     </div>
   </div>
+  <div class="pagetopbar">
+    <span class="pagetopbar__text">
+      PAGE TOP
+    </span>
+  </div>
+
 
   <header class="header">
     <div class="logo">
@@ -43,53 +50,62 @@
   <main class="main">
     <div class="container">
       <div class="main-visual">
-        <img class="main-visual__img" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
+        <div class="main-visual__section30">
+          <img class="main-visual__img fadein" src="./assets/images/pc_pie.jpg" alt="メインのパイの実画像">
+        </div>
       </div>
       <div class="flex-wrap">
         <div class="info flex-wrap__item">
-          <span class="info__sub02">WEB DESIGH</span>
-          <p class="info__title02">LOTTE パイの実 BRAND SITE</p>
-          <div class="info__btn pc">
-            <div class="black-btn">VISIT WEBSITE</div>
+          <span class="info__sub02 fadein">WEB DESIGH</span>
+          <p class="fadein info__title02 fadein">LOTTE パイの実 BRAND SITE</p>
+          <div class="fadein info__btn pc">
+            <a class="black-btn" href="/">VISIT WEBSITE</a>
           </div>
         </div>
         <div class="info flex-wrap__item">
-          <p class="info__desc">
+          <p class="fadein info__desc">
             CLIENT
-            <span class="info__desc--grey">: LOTTE</span>
+            <span class="fadein info__desc--grey">: LOTTE</span>
           </p>
           <div class="dotted-line"></div>
-          <p class="info__desc">DESCRIPTION</p>
+          <p class="fadein info__desc">DESCRIPTION</p>
           <div class="dotted-line"></div>
-          <p class="info__text">
+          <p class="fadein info__text">
             株式会社ロッテ「パイの実」の40周年を記念した、リブランディングを含むブランドサイト制作。ダミーテキストここにテキストを入力します。ダミーテキストここにテキストを入力します。ダミーテキストここにテキストを入力します。ダミーテキストここにテキストを入力します。ダミーテキストここにテキストを入力します。
           </p>
-          <div class="info__btn sp">
-            <div class="black-btn">VISIT WEBSITE</div>
+          <div class="fadein info__btn sp">
+            <a class="black-btn" href="/">VISIT WEBSITE</a>
           </div>
         </div>
         <div class="flex-wrap__item">
-          <img class="works-img" src="./assets/images/pc_pienomi01.jpg" alt="パイの実画像">
+          <img class="works-img fadein" src="./assets/images/pc_pienomi01.jpg" alt="パイの実画像">
         </div>
         <div class="flex-wrap__item">
-          <img class="works-img" src="./assets/images/pc_pienomi02.jpg" alt="パイの実画像">
+          <img class="works-img fadein" src="./assets/images/pc_pienomi02.jpg" alt="パイの実画像">
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <img src="./assets/images/iphone.jpg" alt="パイの実画像">
+    <div class="grey-bg">
+      <div class="container-pd">
+        <div class="flex-wrap--justify-between">
+          <div class="flex-wrap__item03">
+            <img class="fadein" src="./assets/images/iphone01.png" alt="iphoneの画像">
+          </div>
+          <div class="flex-wrap__item03">
+            <img class="fadein s3" src="./assets/images/iphone02.png" alt="iphoneの画像">
+          </div>
+          <div class="flex-wrap__item03">
+            <img class="fadein s45" src="./assets/images/iphone03.png" alt="iphoneの画像">
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-  <footer class="footer">
-    <div class="pagetopbar">
-      <span class="pagetopbar__text">
-        PAGE TOP
-      </span>
-    </div>
+  <footer class="footer fadein">
     <div class="flex-center">
-      <div class="white-stroked-btn left">BACK TO TOP</div>
+      <a class="white-stroked-btn left" href="/">BACK TO TOP</a>
       <div class="separate"></div>
-      <div class="white-stroked-btn right">NEXT PROJECT</div>
+      <a class="white-stroked-btn right" href="#">NEXT PROJECT</a>
     </div>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

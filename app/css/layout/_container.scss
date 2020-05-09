@@ -1,11 +1,20 @@
 .container {
     display: block;
-    max-width: 970px;
-    padding: 0 35px;
+    max-width: 960px;
+    // padding: 0 35px;
     margin: 0 auto 115px;
-    // @include mq() {
-    //     padding: 0 35px;
-    // }
+    @include mq() {
+        padding: 0 35px;
+    }
+}
+.container-pd {
+    display: block;
+    max-width: 960px;
+    padding: 100px 0;
+    margin: 0 auto 115px;
+    @include mq() {
+        padding: 0 35px;
+    }
 }
 .container-fluid {
     display: block;
