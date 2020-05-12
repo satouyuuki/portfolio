@@ -25,3 +25,59 @@
         transform: translate(0, 0);
     }
 }
+
+%fadeinLeft {
+    opacity: 0;
+    transform : translate(-100%, 0);
+}
+
+.fadein-left {
+    @extend %fadeinLeft;
+    transition:1.5s;
+    // &.s3 {
+    //     transition:.3s, .6s;
+    // }
+    // &.s45 {
+    //     transition:.3s, .9s;
+    // }
+    // &.scrollin {
+    //     opacity: 1;
+    //     transform: translateX(0);
+    // }
+}
+
+%fadeinUnder {
+    opacity: 0;
+    transform : translate(0, 50px);
+}
+
+.fadein-under {
+    @extend %fadeinUnder;
+    transition: 1.5s;
+    // &.s3 {
+    //     transition:.3s, .6s;
+    // }
+    // &.s45 {
+    //     transition:.3s, .9s;
+    // }
+    // &.scrollin {
+    //     opacity: 1;
+    //     transform: translateY(0);
+    // }
+    // &.scrollout {
+    //     opacity: 0;
+    //     transform: translateY(-50);
+    // }
+}
+
+
+// @keyframes SlideInUnder {
+//   0% {
+//     opacity: 0;/*初期状態では透明に*/
+//     transform: translateY(100%);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }

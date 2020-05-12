@@ -1,14 +1,20 @@
 .top-visual {
-    width: 100%;
+    display: table;
     height: 100%;
-    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &__inner {
+        display: table-cell;
+        vertical-align: middle;
+    }
 
     &__img {
-        display: block;
+        // display: block;
         width: 60%;
-        margin: 0 auto 25px;
-        position: relative;
-        top: 20%;
+        // margin: 0 auto 25px;
+        // position: relative;
+        // top: 20%;
     }
     &__link {
         display: block;
@@ -37,9 +43,8 @@
         }
         &__img {
             width: 100%;
-            margin: 0 auto 15px;
             padding: 0 35px;
-            top: 26%;
+            margin-top: 160px;
         }
         &__link {
             width: 100%;

@@ -3,63 +3,59 @@
 
     %__item {
         display: block;
-        text-align: right;
         position: absolute;
-        &::after {
-            content: '';
-            display: inline-block;
-            width: 70px;
-            height: 1px;
-            vertical-align: middle;
-        }
+    }
+    %__item-after {
+        content: '';
+        display: inline-block;
+        width: 70px;
+        height: 1px;
+        vertical-align: middle;
+        background-color: $grey02;
     }
 
     &__item {
         @extend %__item;
         @include baseStyle($color: $grey02, $fontSize: 12px);
-        &:first-child {
-            margin-bottom: 10px;
-        }
-        &:last-child {
-            margin-top: 10px;
-        }
         &::after {
-            background-color: $grey02;
+            @extend %__item-after;
         }
         &--current {
             @extend %__item;
             @include baseStyle($fontSize: 12px);
-            &::after {
-                background-color: white;
-            }
         }
     }
     #currentNum {
-        top: 30%
+        top: 30%;
+        width: 100%;
     }
     #nextNum {
-        top: 0
+        bottom: 0;
+        right: 0;
+        margin-top: 10px;
     }
     #prevNum {
-        bottom: 0
+        margin-bottom: 10px;
+        top: 0;
+        right: 0;
     }
     #totalNum {
-        bottom: 30%
+        bottom: 30%;
+        width: 100%;
     }
     &__divider {
         display: block;
         // margin: 5px 0 5px auto;
         position: absolute;
         top: 50%;
+        right: 0;
         width: 95px;
         height: 1px;
         background-color: $black;
     }
     @include mq() {
-        %__item {
-            &::after {
-                width: 10px;
-            }
+        %__item-after {
+            width: 10px;
         }
         &__divider {
             width: 25px;

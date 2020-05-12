@@ -14,13 +14,15 @@
     &__link {
         @extend %__link;
         @include baseStyle($color: $grey02, $fontSize: 12px);
-        &--active {
-            @extend %__link;
-            @include baseStyle($color: $black, $fontSize: 12px);
+        &.active {
+            color: $black;
         }
     }
     &__text-min {
         font-size: 10px;
+        &.active {
+            color: $black;
+        }
     }
     @include mq() {
         padding-left: 35px;
@@ -42,7 +44,7 @@
     top: 50%;
     right: 0;
     height: 100px;
-    width: 100px;
+    width: 95px;
     transform: translateY(-50%);
     @include mq() {
         width: 26px;

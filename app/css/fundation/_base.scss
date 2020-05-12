@@ -2,7 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   height: auto;
   margin-top: 160px;
-  cursor: none;
+  // cursor: none;
   &.is-mask {
     overflow-y: hidden;
   }
@@ -19,5 +19,5 @@ img {
 
 a {
   text-decoration: none;
-  cursor: none;
+  // cursor: none;
 }

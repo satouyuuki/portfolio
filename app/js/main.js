@@ -8,12 +8,19 @@ let ret = ('00' + count + 1).slice(-2);
 
 // 初期ロード時のイベント
 numCounter(count, num);
+matchCategory(count);
 imgSrcReplace();
 
 const cursor = $(".cursor");
 const cWidth = 40;
 let mouseX = 0;
 let mouseY = 0;
+const delay = 10;
+
+// fadein系の変数
+const $fadein = $('.fadein');
+const $fadeinLeft = $('.fadein-left');
+const $fadeinUnder = $('.fadein-under');
 
 const pagetop = $('.pagetopbar');
 // ボタン非表示
@@ -50,22 +57,27 @@ $(window).scroll(function () {
 
 // カーソル系の処理
 $(window).on('mousemove', function (e) {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
-    cursor.css({
-        //カーソルの真ん中に座標軸が来るよう、
-        //カーソルの大きさの半分を引きます
-        left: mouseX - (cWidth / 2),
-        top: mouseY - (cWidth / 2)
-    });
-    $("a").on({
-        "mouseenter": function () {
-            cursor.addClass("is-active");
-        },
-        "mouseleave": function () {
-            cursor.removeClass("is-active");
-        }
-    });
+    if (!isWinSize()) {
+        $('body, a').css('cursor', 'none');
+        mouseX = e.pageX - (cWidth / 2);
+        mouseY = e.pageY - (cWidth / 2);
+        setTimeout(() => {
+            cursor.css({
+                "opacity": "1",
+                "transform": "translate(" + mouseX + "px," + mouseY + "px)"
+            });
+        }, 150);
+        $("a").on({
+            "mouseenter": function () {
+                cursor.addClass("is-active");
+            },
+            "mouseleave": function () {
+                cursor.removeClass("is-active");
+            }
+        });
+    } else {
+        $('body, a').css('cursor', 'initial');
+    }
 });
 
 pagetop.click(function () {
@@ -73,15 +85,75 @@ pagetop.click(function () {
     return false;
 });
 
+
+var defer = new $.Deferred().resolve();
 $('.menu-icon').on('click', () => {
     $('.menu-icon').find('.menu-icon__bar').toggleClass('active');
-    $('.mask').slideToggle();
     $('body').toggleClass('is-mask');
+    if ($('body').hasClass('is-mask')) {
+        defer.promise()
+            .then(function () {
+                $('.mask').slideDown();
+            })
+            .then(function (result) {
+                $fadeinLeft.each(function () {
+                    $(this).css(
+                        {
+                            transform: "translate(0, 0)",
+                            opacity: "1",
+                        }
+                    )
+                });
+            })
+            .then(function (result) {
+                setTimeout(function () {
+                    $fadeinUnder.each(function () {
+                        $(this).css(
+                            {
+                                transform: "translate(0, 0)",
+                                opacity: "1",
+                            }
+                        )
+                    });                    
+                }, 1500);
+            })
+
+    } else {
+        defer.promise()
+            .then(function (result) {
+                $fadeinUnder.each(function () {
+                    $(this).css(
+                        {
+                            transform: "translate(0, 50px)",
+                            opacity: "0",
+                        }
+                    )
+                });
+            })
+            .then(function (result) {
+                setTimeout(function () {
+                    $fadeinLeft.each(function () {
+                        $(this).css(
+                            {
+                                transform: "translate(-100%, 0)",
+                                opacity: "0",
+                            }
+                        )
+                    });
+                }, 1500);
+            })
+            .then(function () {
+                setTimeout(function () {
+                    $('.mask').slideUp();                    
+                }, 3000);
+            })
+    }
 });
 
 $('.scrollbar').on('click', () => {
     slide(num);
 });
+
 
 function imgSrcReplace() {
     if ($img.length !== 0) {
@@ -117,7 +189,8 @@ function slide(totalNum) {
     }
     let result = windowHeight * count;
     $('.main-fix').css('transform', `translateY(-${result}px)`);
-    numCounter(count, num);
+    numCounter(count, num);   
+    matchCategory(count);
 }
 
 function numCounter(num, totalNum) {
@@ -135,5 +208,19 @@ function numCounter(num, totalNum) {
     }
     $('#currentNum').text(dispNum(num + 1));
     $('#totalNum').text(dispNum(totalNum));
-    
+}
+function matchCategory(count) {
+    const text = $(`.visual-link__text--grey:eq(${count})`).text();
+    const arr = [
+        'WEB',
+        'LOGO / ILLUSTRATION',
+        'VISUAL'
+    ];
+    arr.forEach((elem, i) => {
+        console.log({ elem, i });
+        if (elem.indexOf(text) > -1) {
+            $('.sidemenu__text-min').removeClass('active');
+            $(`.sidemenu__text-min:eq(${i})`).addClass('active');
+        }
+    });
 }
