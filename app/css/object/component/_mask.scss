@@ -21,7 +21,9 @@
 
     &__link {
         display: block;
-        padding: 40px 0;
+        // padding: 40px 0;
+        margin: 40px 0;
+        overflow: hidden;
         // &:not(:last-child) {
         //     border-bottom: 1px solid #000;
         // }
@@ -36,18 +38,23 @@
             }
         }
     }
+    %__text {
+        display: inline-block;
+        vertical-align: middle;
+    }
     &__text {
+        @extend %__text;
         @include baseStyle($fontSize: 12px);
         &--primary {
+            @extend %__text;
             @include baseStyle($fontSize: 48px);
-            display: inline-block;
-            vertical-align: middle;
         }
     }
     @include mq() {
         margin-right: auto;
         &__link {
-            padding: 20px 0;
+            // padding: 20px 0;
+            margin: 20px 0;
             display: flex;
             flex-wrap: wrap;
             span {

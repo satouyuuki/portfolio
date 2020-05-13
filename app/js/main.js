@@ -97,23 +97,15 @@ $('.menu-icon').on('click', () => {
             })
             .then(function (result) {
                 $fadeinLeft.each(function () {
-                    $(this).css(
-                        {
-                            transform: "translate(0, 0)",
-                            opacity: "1",
-                        }
-                    )
+                    $(this).removeClass('off');
+                    $(this).addClass('on');
                 });
             })
             .then(function (result) {
                 setTimeout(function () {
                     $fadeinUnder.each(function () {
-                        $(this).css(
-                            {
-                                transform: "translate(0, 0)",
-                                opacity: "1",
-                            }
-                        )
+                        // $(this).removeClass('off');
+                        $(this).addClass('on');
                     });                    
                 }, 1500);
             })
@@ -121,31 +113,32 @@ $('.menu-icon').on('click', () => {
     } else {
         defer.promise()
             .then(function (result) {
-                $fadeinUnder.each(function () {
-                    $(this).css(
-                        {
-                            transform: "translate(0, 50px)",
-                            opacity: "0",
-                        }
-                    )
-                });
+                setTimeout(function () {
+                    $fadeinUnder.each(function () {
+                        $(this).removeClass('on');
+                        $(this).addClass('off');
+                    });
+                },500);
             })
             .then(function (result) {
                 setTimeout(function () {
                     $fadeinLeft.each(function () {
-                        $(this).css(
-                            {
-                                transform: "translate(-100%, 0)",
-                                opacity: "0",
-                            }
-                        )
+                        $(this).removeClass('on');
+                        $(this).addClass('off');
                     });
-                }, 1500);
+                }, 1000);
             })
             .then(function () {
                 setTimeout(function () {
                     $('.mask').slideUp();                    
-                }, 3000);
+                }, 2500);
+            })
+            .then(function (result) {
+                setTimeout(function () {
+                    $fadeinUnder.each(function () {
+                        $(this).removeClass('off');
+                    });
+                }, 3500);
             })
     }
 });
