@@ -31,10 +31,15 @@ pagetop.click(function () {
     return false;
 });
 
+// ロードイベント(画像の高さ取得等)
+$(window).on('load', function () {
+    scrollPos();
+});
 
 // リサイズイベント
 $(window).on('resize', () => {
     imgSrcReplace();
+    scrollPos();
 });
 
 // スクロールイベント
@@ -138,6 +143,21 @@ $('.menu-icon').on('click', () => {
 $('.scrollbar').on('click', () => {
     slide(num);
 });
+
+function scrollPos() {
+    const visualLinkHeight = $('.visual-link:eq(0)').offset().top;
+    const headerHeight = $('.header').outerHeight();
+    console.log({ visualLinkHeight, headerHeight });
+    let topPosition = 0;
+    if (isWinSize()) {
+        // topPosition = visualLinkHeight;
+        topPosition = visualLinkHeight - headerHeight;
+    } else {
+        topPosition = visualLinkHeight - headerHeight + 50;
+    }
+    $('.scrollbar').css('top', topPosition);
+}
+
 
 function smoothSlide() {
     $fadein.each(function () {
