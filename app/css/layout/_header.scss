@@ -11,6 +11,11 @@
     justify-content: space-between;
     align-items: center;
 
+    &__h1 {
+        @include baseStyle($fontWeight: bold);
+        letter-spacing: .1em;
+    }
+
     .menu-icon {
         position: relative;
         width: 20px;

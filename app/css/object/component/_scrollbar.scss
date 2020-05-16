@@ -1,10 +1,10 @@
 .scrollbar {
     position: fixed;
-    right: 17%;
-    bottom: 25%;
+    right: 18%;
+    bottom: 20%;
 
     &__text {
-        @include baseStyle($fontSize: 12px);
+        @include baseStyle($fontSize: 12px, $fontWeight: 500);
         letter-spacing: .1em;
         writing-mode: vertical-rl;
         display: block;
@@ -17,13 +17,20 @@
         margin-left: 5px;
     }
     @include mq() {
-        right: 5px;
-        bottom: 10%;
+        right: 10px;
+        bottom: 18%;
+        &__text {
+            font-size: 9px;
+        }
+        &__img {
+            width: 3px;
+            height: 42px;
+        }
     }
 }
 .textbar {
     &__text {
-        @include baseStyle();
+        @include baseStyle($fontWeight: 600);
         writing-mode: vertical-rl;
         &::before {
             content: '';

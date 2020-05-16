@@ -16,13 +16,13 @@
 
     &__item {
         @extend %__item;
-        @include baseStyle($color: $grey02, $fontSize: 12px);
+        @include baseStyle($color: $grey02, $fontSize: 12px, $fontWeight: 600);
         &::after {
             @extend %__item-after;
         }
         &--current {
             @extend %__item;
-            @include baseStyle($fontSize: 12px);
+            @include baseStyle($fontSize: 12px, $fontWeight: 600);
         }
     }
     #currentNum {

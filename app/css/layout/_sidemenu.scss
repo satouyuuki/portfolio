@@ -9,17 +9,25 @@
     }
     %__link {
         display: block;
-        margin-bottom: 38px;
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__link {
         @extend %__link;
-        @include baseStyle($color: $grey02, $fontSize: 12px);
+        @include baseStyle($color: $grey02, $fontSize: 12px, $fontWeight: 600);
         &.active {
             color: $black;
         }
     }
     &__text-min {
         font-size: 10px;
+        display: block;
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
         &.active {
             color: $black;
         }
@@ -46,7 +54,9 @@
     height: 100px;
     width: 95px;
     transform: translateY(-50%);
+    z-index: 1;
     @include mq() {
+        top: 28%;
         width: 26px;
     }
 }

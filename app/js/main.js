@@ -5,12 +5,6 @@ const windowHeight = $(window).outerHeight();
 
 let count = 0;
 let ret = ('00' + count + 1).slice(-2);
-
-// 初期ロード時のイベント
-numCounter(count, num);
-matchCategory(count);
-imgSrcReplace();
-
 const cursor = $(".cursor");
 const cWidth = 40;
 let mouseX = 0;
@@ -21,8 +15,14 @@ const delay = 10;
 const $fadein = $('.fadein');
 const $fadeinLeft = $('.fadein-left');
 const $fadeinUnder = $('.fadein-under');
-
 const pagetop = $('.pagetopbar');
+
+// 初期ロード時のイベント
+numCounter(count, num);
+matchCategory(count);
+imgSrcReplace();
+smoothSlide();
+
 // ボタン非表示
 pagetop.hide();
 
@@ -39,20 +39,12 @@ $(window).on('resize', () => {
 
 // スクロールイベント
 $(window).scroll(function () {
+    smoothSlide();
     if ($(this).scrollTop() > 100) {
         pagetop.fadeIn();
     } else {
         pagetop.fadeOut();
     }
-    $('.fadein').each(function () {
-        const elemPos = $(this).offset().top,
-            scroll = $(window).scrollTop();
-            // windowHeight = $(window).height();
-        console.log({ elemPos, scroll, windowHeight });
-        if (scroll > elemPos - windowHeight + 100) {
-            $(this).addClass('scrollin');
-        }
-    });
 });
 
 // カーソル系の処理
@@ -107,7 +99,7 @@ $('.menu-icon').on('click', () => {
                         // $(this).removeClass('off');
                         $(this).addClass('on');
                     });                    
-                }, 1500);
+                }, 500);
             })
 
     } else {
@@ -126,19 +118,19 @@ $('.menu-icon').on('click', () => {
                         $(this).removeClass('on');
                         $(this).addClass('off');
                     });
-                }, 1000);
+                }, 500);
             })
             .then(function () {
                 setTimeout(function () {
                     $('.mask').slideUp();                    
-                }, 2500);
+                }, 1500);
             })
             .then(function (result) {
                 setTimeout(function () {
                     $fadeinUnder.each(function () {
                         $(this).removeClass('off');
                     });
-                }, 3500);
+                }, 2500);
             })
     }
 });
@@ -146,6 +138,18 @@ $('.menu-icon').on('click', () => {
 $('.scrollbar').on('click', () => {
     slide(num);
 });
+
+function smoothSlide() {
+    $fadein.each(function () {
+        const elemPos = $(this).offset().top,
+            scroll = $(window).scrollTop();
+        // windowHeight = $(window).height();
+        console.log({ elemPos, scroll, windowHeight });
+        if (scroll > elemPos - windowHeight + 100) {
+            $(this).addClass('scrollin');
+        }
+    });
+}
 
 
 function imgSrcReplace() {
@@ -203,17 +207,20 @@ function numCounter(num, totalNum) {
     $('#totalNum').text(dispNum(totalNum));
 }
 function matchCategory(count) {
-    const text = $(`.visual-link__text--grey:eq(${count})`).text();
-    const arr = [
-        'WEB',
-        'LOGO / ILLUSTRATION',
-        'VISUAL'
-    ];
-    arr.forEach((elem, i) => {
-        console.log({ elem, i });
-        if (elem.indexOf(text) > -1) {
-            $('.sidemenu__text-min').removeClass('active');
-            $(`.sidemenu__text-min:eq(${i})`).addClass('active');
-        }
-    });
+    if ($('.visual-link__text--grey').length > 0) {
+        const text = $(`.visual-link__text--grey:eq(${count})`).text();
+        const arr = [
+            'WEB',
+            'LOGO / ILLUSTRATION',
+            'VISUAL'
+        ];
+        arr.forEach((elem, i) => {
+            console.log({ elem, i });
+            if (elem.indexOf(text) > -1) {
+                $('.sidemenu__text-min').removeClass('active');
+                $(`.sidemenu__text-min:eq(${i})`).addClass('active');
+            }
+        });
+
+    }
 }

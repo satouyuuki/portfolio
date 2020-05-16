@@ -33,9 +33,21 @@
             }
         }
         span {
-            &:nth-child(3n + 2) {
+            &:nth-child(1) {
+                @include baseStyle($fontSize: 12px, $fontWeight: 500);
+                font-style: italic;
+            }
+            &:nth-child(2) {
+                // @include baseStyle($fontSize: 12px, $fontWeight: 600);
                 padding: 0 37px;
             }
+            &:nth-child(3) {
+                @include baseStyle($fontSize: 12px, $fontWeight: 600);
+                font-style: italic;
+            }
+            // &:nth-child(3n + 2) {
+            //     padding: 0 37px;
+            // }
         }
     }
     %__text {
@@ -44,10 +56,14 @@
     }
     &__text {
         @extend %__text;
-        @include baseStyle($fontSize: 12px);
+        // @include baseStyle($fontSize: 12px);
         &--primary {
             @extend %__text;
-            @include baseStyle($fontSize: 48px);
+            @include baseStyle($fontSize: 48px, $fontWeight: 600);
+        }
+        &--secondary {
+            @extend %__text;
+            @include baseStyle($fontSize: 12px, $fontWeight: 600);
         }
     }
     @include mq() {

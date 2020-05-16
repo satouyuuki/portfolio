@@ -3,8 +3,6 @@
     transform : translate(0, 50px);
 }
 .fadein {
-    // opacity: 0;
-    // transform : translate(0, 50px);
     @extend %fadein;
     transition: 1.5s;
 

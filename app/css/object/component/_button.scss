@@ -6,18 +6,21 @@ $backgroundColors: (
 @mixin btn($backgroundColor: white) {
   background: #{map-get($backgroundColors, $backgroundColor)};
   transition: .4s;
+  letter-spacing: .1em;
   &:hover {
     letter-spacing: .5em;
   }
 }
-@mixin stroked-btn($backgroundColor: white, $fontSize: 12px) {
+@mixin stroked-btn($backgroundColor: white, $fontSize: 12px, $fontWeight: 500) {
   border: 1px solid #{map-get($backgroundColors, $backgroundColor)};
   color: #{map-get($backgroundColors, $backgroundColor)};
   font-size: $fontSize;
+  font-weight: $fontWeight;
   display: inline-block;
   padding: 16px 0;
   text-align: center;
   transition: .4s;
+  letter-spacing: .1em;
   &:hover {
     letter-spacing: .5em;
   }
