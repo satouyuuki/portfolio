@@ -1,18 +1,22 @@
 .container {
     display: block;
     max-width: 960px;
+    width: 83%;
     // padding: 0 35px;
     margin: 0 auto 115px;
     @include mq() {
+        width: 100%;
         padding: 0 35px;
     }
 }
 .container-pd {
     display: block;
     max-width: 960px;
+    width: 83%;
     padding: 100px 0;
     margin: 0 auto 115px;
     @include mq() {
+        width: 100%;
         padding: 0 35px;
     }
 }

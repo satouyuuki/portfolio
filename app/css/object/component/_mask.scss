@@ -29,7 +29,11 @@
         // }
         &:hover {
             span {
-                color: $hover-text;
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    color: $hover-text;
+                }
             }
         }
         span {
@@ -74,11 +78,18 @@
             display: flex;
             flex-wrap: wrap;
             span {
-                &:nth-child(3n + 2) {
+                &:nth-child(1) {
+                    padding-right: 10px;
+                    color: $hover-text;
+                }
+                &:nth-child(2) {
                     padding: 0;
                     order: 1;
                     width: 100%;
                     color: $black;
+                }
+                &:nth-child(3) {
+                    color: $hover-text;
                 }
             }
 

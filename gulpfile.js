@@ -16,7 +16,7 @@ const eslint = require("gulp-eslint");
 
 const styleSRC = "./app/css/**/*.scss";
 const styleURL = "./dist/css/";
-const htmlSRC = "./app/*.html";
+const htmlSRC = "./app/**/*.html";
 const htmlURL = "./dist/";
 const jsSRC = "./app/js/*.js";
 const jsURL = "./dist/js/";

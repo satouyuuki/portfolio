@@ -10,21 +10,34 @@
     %__link {
         display: block;
         margin-bottom: 30px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
     }
     &__link {
         @extend %__link;
+        // @include baseStyle($color: $grey02, $fontSize: 12px, $fontWeight: 600);
+        // &.active {
+        //     color: $black;
+        // }
+    }
+    &__text {
         @include baseStyle($color: $grey02, $fontSize: 12px, $fontWeight: 600);
+        &:hover {
+            color: $black;
+        }
         &.active {
             color: $black;
         }
     }
     &__text-min {
-        font-size: 10px;
+        @include baseStyle($color: $grey02, $fontSize: 10px, $fontWeight: 600);
+        // font-size: 10px;
         display: block;
         margin-bottom: 5px;
+        &:hover {
+            color: $black;
+        }
         &:last-child {
             margin-bottom: 0;
         }
