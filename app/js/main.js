@@ -17,11 +17,49 @@ const $fadeinLeft = $('.fadein-left');
 const $fadeinUnder = $('.fadein-under');
 const pagetop = $('.pagetopbar');
 
+// scroll counter変数
+const $prevNum = $('#prevNum');
+const $nextNum = $('#nextNum');
+const $currentNum = $('#currentNum');
+const $totalNum = $('#totalNum');
+
 // 初期ロード時のイベント
 numCounter(count, num);
 matchCategory(count);
 imgSrcReplace();
 smoothSlide();
+
+$prevNum.on('click', function () {
+    count = Number($prevNum.text()) - 1;
+    slideimg(count);
+});
+$nextNum.on('click', function () {
+    count = Number($nextNum.text()) - 1;
+    slideimg(count);
+});
+$totalNum.on('click', function () {
+    count = Number($totalNum.text()) - 1;
+    slideimg(count);
+});
+
+$('.sidemenu__text-min').each(function (i, e) {
+    $(`.sidemenu__text-min:eq(${i})`).on('click', () => {
+        console.log(i);
+        if (i == 0) {
+            count = 0;
+            slideimg(count);
+        }
+        else if (i == 1) {
+            count = 7;
+            slideimg(count);
+        }
+        else if (i == 2) {
+            count = 12;
+            slideimg(count);
+        }
+    });
+});
+
 
 // ボタン非表示
 pagetop.hide();
@@ -140,9 +178,9 @@ $('.menu-icon').on('click', () => {
     }
 });
 
-$('.scrollbar').on('click', () => {
-    slide(num);
-});
+// $('.scrollbar').on('click', () => {
+//     slide(num);
+// });
 
 function scrollPos() {
     if ($('.scrollbar').length > 0) {
@@ -205,32 +243,39 @@ function dispNum(num) {
     return ('00' + num).slice(-2);
 }
 
-function slide(totalNum) {
-    count++;
-    if (count >= totalNum) {
-        count = 0;
-    }
+// function slide(totalNum) {
+//     count++;
+//     if (count >= totalNum) {
+//         count = 0;
+//     }
+//     let result = windowHeight * count;
+//     $('.main-fix').css('transform', `translateY(-${result}px)`);
+//     numCounter(count, num);
+//     matchCategory(count);
+// }
+
+function slideimg(count) {
     let result = windowHeight * count;
     $('.main-fix').css('transform', `translateY(-${result}px)`);
-    numCounter(count, num);   
+    numCounter(count, num);
     matchCategory(count);
 }
 
-function numCounter(num, totalNum) {
+function numCounter(num, total) {
     if (num == 0) {
-        $('#prevNum').css('display', 'none');
+        $prevNum.css('display', 'none');
     } else {
-        $('#prevNum').css('display', 'block');
-        $('#prevNum').text(dispNum(num));
+        $prevNum.css('display', 'block');
+        $prevNum.text(dispNum(num));
     }
-    if (totalNum < num + 2) {
-        $('#nextNum').css('display', 'none');
+    if (total < num + 2) {
+        $nextNum.css('display', 'none');
     } else {
-        $('#nextNum').css('display', 'block');
-        $('#nextNum').text(dispNum(num + 2));
+        $nextNum.css('display', 'block');
+        $nextNum.text(dispNum(num + 2));
     }
-    $('#currentNum').text(dispNum(num + 1));
-    $('#totalNum').text(dispNum(totalNum));
+    $currentNum.text(dispNum(num + 1));
+    $totalNum.text(dispNum(total));
 }
 function matchCategory(count) {
     if ($('.visual-link__text--grey').length > 0) {
