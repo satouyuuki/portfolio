@@ -24,8 +24,14 @@
     }
     &__desc {
         @include baseStyle($color: $black, $fontSize: 14px, $fontWeight: 600);
+        margin-top: 20px;
         &--grey {
             @include baseStyle($color: $grey02, $fontSize: 14px, $fontWeight: 600);
+            &::before {
+                content: ':';
+                display: inline-block;
+                padding: 0 10px;
+            }
         }
     }
     &__btn {
@@ -40,6 +46,13 @@
         &__text {
             margin-bottom: 30px;
         }
+        &__title02 {
+            margin-bottom: 30px;
+        }
+        &__desc {
+            margin-top: 0;
+        }
+
         &__btn {
             &.pc {
                 display: none;

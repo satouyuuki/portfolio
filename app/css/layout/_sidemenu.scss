@@ -37,6 +37,7 @@
         display: block;
         margin-bottom: 5px;
         &:hover {
+            transition: color, .5s;
             color: $black;
         }
         &:last-child {

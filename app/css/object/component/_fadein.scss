@@ -4,19 +4,19 @@
 }
 .fadein {
     @extend %fadein;
-    transition: 1.5s;
+    transition: 1.5s .5s;
 
     &.s3 {
         @extend %fadein;
-        transition: 3s;
+        transition: 1.5s 1s;
     }
     &.s45 {
         @extend %fadein;
-        transition: 4.5s;
+        transition: 1.5s 1.5s;
     }
     &.s6 {
         @extend %fadein;
-        transition: 6s;
+        transition: 1.5s 2s;
     }
     &.scrollin {
         opacity: 1;
@@ -50,11 +50,14 @@
     &.off {
         transform: translateY(-1000%);
     }
+    &.s15 {
+        transition:.5s, 1.75s;
+    }
     &.s3 {
         transition:.5s, 2s;
     }
     &.s45 {
-        transition:.5s, 3s;
+        transition:.5s, 2.5s;
     }
     &.s6 {
         transition:.5s, 6s;
