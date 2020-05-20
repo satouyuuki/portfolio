@@ -1,5 +1,6 @@
 .scroll-now {
     display: block;
+    position: relative;
 
     %__item {
         display: block;
@@ -27,7 +28,9 @@
     }
     #currentNum {
         top: 30%;
-        width: 100%;
+        right: 0;
+        width: 95px;
+        // width: 100%;
     }
     #nextNum {
         bottom: 0;
@@ -41,8 +44,8 @@
     }
     #totalNum {
         bottom: 30%;
-        width: 100%;
-    }
+        right: 0;
+        width: 95px;    }
     &__divider {
         display: block;
         // margin: 5px 0 5px auto;
@@ -59,6 +62,10 @@
         }
         &__divider {
             width: 25px;
+        }
+        #totalNum,
+        #currentNum {
+            width: 100%;
         }
     }
 }

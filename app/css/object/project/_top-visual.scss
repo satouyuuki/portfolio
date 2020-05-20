@@ -1,39 +1,34 @@
 .top-visual {
-    display: table;
-    height: 100%;
+    // display: table;
+    // height: 100%;
     text-align: center;
-    width: 100%;
+    // height: 100vh;
+    transition: 1s;
+    // overflow-y: hidden;
+    // width: 100%;
 
     &__inner {
-        display: table-cell;
-        vertical-align: middle;
+        // display: table-cell;
+        // vertical-align: middle;
     }
 
     &__img {
-        // display: block;
-        width: 57%;
+        // width: 57%;
+        width: 100%;
+        height: 486px;
+        vertical-align: bottom;
         // margin: 0 auto 25px;
         // position: relative;
         // top: 20%;
     }
-    &__link {
-        display: block;
-        width: 57%;
-        margin: 0 auto;
-        text-align: right;
-        position: relative;
-        top: 20%;
-    }
-    .visual-link {
-        &__text {
-            @include baseStyle($color: $black, $fontSize: 10px, $fontWeight: 700);
-            letter-spacing: .1em;
-            &--grey {
-                @include baseStyle($color: $grey02, $fontSize: 10px, $fontWeight: 700);
-                letter-spacing: .1em;
-            }
-        }
-    }
+    // &__link {
+    //     display: block;
+    //     width: 57%;
+    //     margin: 0 auto;
+    //     text-align: right;
+    //     position: relative;
+    //     top: 20%;
+    // }
     &__btn {
         text-align: right;
     }
@@ -43,13 +38,43 @@
         }
         &__img {
             width: 100%;
+            height: 400px;
             padding: 0 35px;
-            margin-top: 120px;
+            // margin-top: 120px;
         }
         &__link {
             width: 100%;
             padding: 0 35px;
             top: 26%;
         }
+    }
+}
+
+.visual-link-fix {
+    // display: block;
+    overflow-y: hidden;
+    // position: fixed;
+    // top: 75%;
+    // width: 100%;
+}
+.visual-link-wrap {
+    transition: 1s;
+}
+.visual-link {
+    display: block;
+    text-align: right;
+    width: 57%;
+    margin: 0 auto;
+    &__text {
+        @include baseStyle($color: $black, $fontSize: 10px, $fontWeight: 700);
+        letter-spacing: .1em;
+        &--grey {
+            @include baseStyle($color: $grey02, $fontSize: 10px, $fontWeight: 700);
+            letter-spacing: .1em;
+        }
+    }
+    @include mq() {
+        width: 100%;
+        padding: 0 35px;
     }
 }

@@ -3,17 +3,17 @@
     padding-left: 80px;
     background: $white;
     &--fix {
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
+        // position: fixed;
+        // top: 50%;
+        // transform: translateY(-50%);
         z-index: 1;
     }
     %__link {
         display: block;
         margin-bottom: 30px;
-        // &:last-child {
-        //     margin-bottom: 0;
-        // }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__link {
         @extend %__link;
@@ -63,12 +63,12 @@
     }
 }
 .sidemenu-fix-right {
-    position: fixed;
-    top: 50%;
-    right: 0;
+    // position: fixed;
+    // top: 50%;
+    // right: 0;
     height: 100px;
     width: 95px;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     z-index: 1;
     @include mq() {
         top: 28%;
