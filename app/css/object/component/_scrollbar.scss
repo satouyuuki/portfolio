@@ -3,6 +3,9 @@
     right: 18%;
     z-index: 1;
     top: 635px;
+    // position: absolute;
+    // left: 10px;
+
 
     &__text {
         @include baseStyle($fontSize: 12px, $fontWeight: 500);

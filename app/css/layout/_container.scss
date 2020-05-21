@@ -7,6 +7,7 @@
     @include mq() {
         width: 100%;
         padding: 0 35px;
+        margin: 0 auto 40px;
     }
 }
 .container-pd {
@@ -17,7 +18,8 @@
     margin: 0 auto 115px;
     @include mq() {
         width: 100%;
-        padding: 0 35px;
+        padding: 30px 35px;
+        margin: 0 auto 40px;
     }
 }
 .container-fluid {

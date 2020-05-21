@@ -45,7 +45,7 @@ function navigateTo() {
 
 // 初期ロード時のイベント
 numCounter(count, imgTotalNum);
-// matchCategory(count);
+matchCategory(count);
 imgSrcReplace();
 //初期画面ロード時
 $(window).on('load', () => {
@@ -53,7 +53,7 @@ $(window).on('load', () => {
   vlwHeight = $visualLinkWrap.find('.visual-link').outerHeight();
   $topVisual.css('height', tHeight);
   $visualLinkWrap.css('height', vlwHeight);
-  // scrollPos();
+  scrollPos();
 });
 
 $prevNum.on('click', function () {
@@ -90,7 +90,7 @@ $('.sidemenu__text-min').each(function (i, e) {
 // リサイズイベント
 $(window).on('resize', () => {
   imgSrcReplace();
-  // scrollPos();
+  scrollPos();
 });
 
 function imgSrcReplace() {
@@ -110,17 +110,20 @@ function imgSrcReplace() {
 }
 
 function scrollPos() {
-  if ($('.scrollbar').length > 0) {
-    const headerHeight = $('.header').outerHeight();
-    let topPosition = 0;
-    if (isWinSize()) {
-        topPosition = tHeight;
-    } else {
-      console.log('he');
-        topPosition = tHeight + headerHeight;
-    }
-    $('.scrollbar').css('top', topPosition);
+  const mainHeight = $('.main-fix').find('img:eq(0)').outerHeight();
+  const winHeight = $(window).outerHeight();
+  const scrollbarHeight = $('.scrollbar').outerHeight();
+  const sidemenuHeight = $('.sidemenu').outerHeight(true);
+  const headerHeight = $('.header').outerHeight();
+  let scrollPosition = 0;
+  if (isWinSize()) {
+    scrollPosition = headerHeight + sidemenuHeight + mainHeight - scrollbarHeight;
   }
+  else {
+    scrollPosition = (mainHeight / 2) + (winHeight / 2) - scrollbarHeight - 30;
+  }
+  console.log({ headerHeight, sidemenuHeight, mainHeight });
+  $('.scrollbar').css('top', scrollPosition);
 }
 
 
@@ -146,7 +149,7 @@ function slideimg(counter) {
   $topVisual.css("transform", "translateY(-" + result + "px)");
   $visualLinkWrap.css("transform", "translateY(-" + vlwResult + "px)");
   numCounter(counter, imgTotalNum);
-  // matchCategory(counter);
+  matchCategory(counter);
 }
 
 function numCounter(counter, total) {

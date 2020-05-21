@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   &--center {
+    justify-content: space-between;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
@@ -23,6 +23,11 @@
     max-width: 745px;
     padding: 0 35px;
     flex: 1;
+  }
+  &__about-l {
+    width: 210px;
+    align-self: flex-start;
+    margin-top: 150px;
   }
   &__main {
     flex: 1;
@@ -48,6 +53,10 @@
       flex: auto;
       width: 100%;
       margin-bottom: 15px;
+    }
+    &__about-l {
+      margin-top: 0;
+      margin-bottom: 30px;
     }
     &__left {
       margin-bottom: 30px;
@@ -109,6 +118,7 @@
       width: 100%;
       &:nth-child(odd) {
         padding-right: 0;
+        margin-bottom: 15px;
       }
       &:nth-child(even) {
         padding-left: 0;

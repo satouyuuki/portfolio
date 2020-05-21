@@ -35,9 +35,9 @@
         @include baseStyle($color: $grey02, $fontSize: 10px, $fontWeight: 600);
         // font-size: 10px;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 14px;
         &:hover {
-            transition: color, .5s;
+            transition: color, 1s;
             color: $black;
         }
         &:last-child {
@@ -55,6 +55,9 @@
             width: 100%;
             transform: translateY(0%);
             z-index: 1;
+        }
+        &__text-min {
+            margin-bottom: 5px;
         }
         %__link {
             margin-bottom: 10px;
