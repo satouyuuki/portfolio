@@ -18,7 +18,7 @@ const $totalNum = $('#totalNum');
 const $topVisual = $('.top-visual');
 const $visualLinkWrap = $('.visual-link-wrap');
 
-$(document).bind("mousewheel DOMMouseScroll MozMousePixelScroll", function (event) {
+$(document).bind("mousewheel DOMMouseScroll MozMousePixelScroll touchmove", function (event) {
   var delta = event.originalEvent.wheelDelta;
   if (isMoving) return;
   navigateTo();
@@ -69,6 +69,11 @@ $totalNum.on('click', function () {
   slideimg(count);
 });
 
+$('.sidemenu__text:eq(0)').on('click', () => {
+  count = 0;
+  slideimg(count);
+});
+
 $('.sidemenu__text-min').each(function (i, e) {
   $(`.sidemenu__text-min:eq(${i})`).on('click', () => {
     console.log(i);
@@ -110,20 +115,24 @@ function imgSrcReplace() {
 }
 
 function scrollPos() {
-  const mainHeight = $('.main-fix').find('img:eq(0)').outerHeight();
-  const winHeight = $(window).outerHeight();
+  const mainHeight = $('.main-fix').find('img:eq(0)').outerHeight(true);
+  const mainWidth = $('.main-fix').find('img:eq(0)').outerWidth(true);
   const scrollbarHeight = $('.scrollbar').outerHeight();
-  const sidemenuHeight = $('.sidemenu').outerHeight(true);
-  const headerHeight = $('.header').outerHeight();
-  let scrollPosition = 0;
+  const mainPosLeft = $('.main-fix').find('img:eq(0)').offset().left;
+  const mainPosTop = $('.main-fix').find('img:eq(0)').offset().top;
+  let scrollPositionY = 0;
+  let scrollPositionX = 0;
   if (isWinSize()) {
-    scrollPosition = headerHeight + sidemenuHeight + mainHeight - scrollbarHeight;
+    scrollPositionX = mainWidth - 25;
   }
   else {
-    scrollPosition = (mainHeight / 2) + (winHeight / 2) - scrollbarHeight - 30;
+    scrollPositionX = mainWidth + mainPosLeft + 30;
   }
-  console.log({ headerHeight, sidemenuHeight, mainHeight });
-  $('.scrollbar').css('top', scrollPosition);
+  scrollPositionY = mainHeight + mainPosTop - scrollbarHeight;
+  $('.scrollbar').css({
+    'top': scrollPositionY,
+    'left': scrollPositionX,
+  });
 }
 
 

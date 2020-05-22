@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   &--center {
+    z-index: 2;
     justify-content: space-between;
     position: fixed;
     top: 50%;
@@ -23,6 +24,7 @@
     max-width: 745px;
     padding: 0 35px;
     flex: 1;
+    margin-bottom: 70px;
   }
   &__about-l {
     width: 210px;
@@ -84,6 +86,10 @@
   }
   &__item {
     width: calc(100% / 2);
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     &:nth-child(odd) {
       padding-right: 20px;
     }
@@ -117,9 +123,9 @@
     }
     &__item {
       width: 100%;
+      margin-bottom: 45px;
       &:nth-child(odd) {
         padding-right: 0;
-        margin-bottom: 15px;
       }
       &:nth-child(even) {
         padding-left: 0;

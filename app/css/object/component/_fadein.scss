@@ -8,15 +8,15 @@
 
     &.s3 {
         @extend %fadein;
-        transition: 1.5s 1s;
+        transition: 1.5s .75s;
     }
     &.s45 {
         @extend %fadein;
-        transition: 1.5s 1.5s;
+        transition: 1.5s 1s;
     }
     &.s6 {
         @extend %fadein;
-        transition: 1.5s 2s;
+        transition: 1.5s 1.25s;
     }
     &.scrollin {
         opacity: 1;

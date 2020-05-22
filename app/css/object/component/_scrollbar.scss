@@ -1,6 +1,6 @@
 .scrollbar {
     position: fixed;
-    right: 18%;
+    // right: 18%;
     z-index: 1;
     top: 635px;
     // position: absolute;
@@ -21,7 +21,7 @@
         margin-left: 5px;
     }
     @include mq() {
-        right: 10px;
+        // right: 10px;
         top: 510px;
         &__text {
             font-size: 9px;
