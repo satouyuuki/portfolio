@@ -18,7 +18,7 @@ const $totalNum = $('#totalNum');
 const $topVisual = $('.top-visual');
 const $visualLinkWrap = $('.visual-link-wrap');
 
-$(document).bind("mousewheel DOMMouseScroll MozMousePixelScroll touchmove", function (event) {
+$(document).bind("mousewheel DOMMouseScroll MozMousePixelScroll", function (event) { 
   var delta = event.originalEvent.wheelDelta;
   if (isMoving) return;
   navigateTo();
